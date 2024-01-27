@@ -14,11 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
     float heightInMeters;
     int weightInKilos;
 }
-
-- (void)setHeightInMeters:(float)h;
-- (void)setWeightInKilos:(int)w;
-
+@property float heightInMeters;
+@property int weightInKilos;
 - (float)bodyMassIndex;
+- (void)addYourselfToArray:(NSMutableArray *)theArray;
 @end
 
 NS_ASSUME_NONNULL_END

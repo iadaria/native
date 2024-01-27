@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4371D44F2B62810000DE29BF /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371D44E2B62810000DE29BF /* Employee.m */; };
+		4371D4522B62868100DE29BF /* Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371D4512B62868100DE29BF /* Asset.m */; };
 		438AD49B2B6257CC00B08AB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 438AD49A2B6257CC00B08AB6 /* main.m */; };
 		438AD4A32B625CBE00B08AB6 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 438AD4A22B625CBE00B08AB6 /* Person.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4371D44D2B62810000DE29BF /* Employee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		4371D44E2B62810000DE29BF /* Employee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		4371D4502B62868100DE29BF /* Asset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Asset.h; sourceTree = "<group>"; };
+		4371D4512B62868100DE29BF /* Asset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Asset.m; sourceTree = "<group>"; };
 		438AD4972B6257CC00B08AB6 /* ebook1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ebook1; sourceTree = BUILT_PRODUCTS_DIR; };
 		438AD49A2B6257CC00B08AB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		438AD4A12B625CBE00B08AB6 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -60,9 +66,13 @@
 		438AD4992B6257CC00B08AB6 /* ebook1 */ = {
 			isa = PBXGroup;
 			children = (
+				4371D4512B62868100DE29BF /* Asset.m */,
 				438AD49A2B6257CC00B08AB6 /* main.m */,
 				438AD4A12B625CBE00B08AB6 /* Person.h */,
 				438AD4A22B625CBE00B08AB6 /* Person.m */,
+				4371D44E2B62810000DE29BF /* Employee.m */,
+				4371D44D2B62810000DE29BF /* Employee.h */,
+				4371D4502B62868100DE29BF /* Asset.h */,
 			);
 			path = ebook1;
 			sourceTree = "<group>";
@@ -124,7 +134,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4371D44F2B62810000DE29BF /* Employee.m in Sources */,
 				438AD4A32B625CBE00B08AB6 /* Person.m in Sources */,
+				4371D4522B62868100DE29BF /* Asset.m in Sources */,
 				438AD49B2B6257CC00B08AB6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
