@@ -11,6 +11,7 @@ NSString *docPath(void) {
     return [[pathList objectAtIndex:0] stringByAppendingPathComponent:@"data.td"];
 }
 @implementation ViewController
+@synthesize selectedRow;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +31,8 @@ NSString *docPath(void) {
         [tasks addObject:@"6 pomodoro android-java"];
     }
     
+    NSLog(@"Tasks: %@", tasks);
+    
     /*UIView *view = [[UIView alloc] init];
     view.backgroundColor = [UIColor redColor];
     view.frame = CGRectMake(100, 100, 100, 100);
@@ -38,10 +41,15 @@ NSString *docPath(void) {
     CGRect tableFrame = CGRectMake(0, 120, 320, 380);
     CGRect fieldFrame = CGRectMake(20, 80, 200, 31);
     CGRect buttonFrame = CGRectMake(228, 80, 72, 31);
+    CGRect deleteFrame = CGRectMake(320, 80, 72,31);
     
     taskTable = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
     [taskTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [taskTable setAllowsSelection:YES];
+    [taskTable setAllowsSelectionDuringEditing:YES];
+    [taskTable setDelegate:self];
     [taskTable setDataSource:self];
+   
     
     // Field
     taskField = [[UITextField alloc] initWithFrame:fieldFrame];
@@ -54,9 +62,16 @@ NSString *docPath(void) {
     [insertButton addTarget:self action:@selector(addTask:) forControlEvents:UIControlEventTouchUpInside];
     [insertButton setTitle:@"Insert" forState:UIControlStateNormal];
     
+    // Delete button
+    deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [deleteButton setFrame:deleteFrame];
+    [deleteButton addTarget:self action:@selector(deleteTask:) forControlEvents:UIControlEventTouchUpInside];
+    [deleteButton setTitle:@"Del" forState:UIControlStateNormal];
+    
     [[self view] addSubview:taskTable];
     [[self view] addSubview:taskField];
     [[self view] addSubview:insertButton];
+    [[self view] addSubview:deleteButton];
     
 }
 
@@ -75,6 +90,20 @@ NSString *docPath(void) {
     
 }
 
+- (void)deleteTask:(id)sender {
+    NSInteger deletingIndex = [self selectedRow];
+    NSLog(@"Clicked delete %lu", deletingIndex);
+    
+    
+    if (deletingIndex >= 0) {
+        NSLog(@"Need del %lu", deletingIndex);
+        
+        [tasks removeObjectAtIndex:deletingIndex];
+        [taskTable reloadData];
+    }
+}
+
+
 #pragma mark - Table View managemnt
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -90,6 +119,11 @@ NSString *docPath(void) {
         [[c textLabel] setText:item];
     }
     return c;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    NSLog(@"%lu", indexPath.row);
+    [self setSelectedRow:indexPath.row];
 }
 
 @end
