@@ -19,8 +19,17 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
+    // Navbar styles
+    
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:NAV_BAR_BACKGROUND];
+    [[UINavigationBar appearance] setBackgroundColor:NAV_BAR_BACKGROUND];
+    
+    NSMutableDictionary* navbarAttributes = [NSMutableDictionary dictionary];
+    navbarAttributes[NSFontAttributeName] = [UIFont fontWithName:@"Montserrat SemiBold" size:14.0f];
+    navbarAttributes[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
+    
 
     return YES;
     

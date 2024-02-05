@@ -18,6 +18,7 @@
     // Do any additional setup after loading the view.
     //[super prefersStatusBarHidden];
     //[super preferredStatusBarStyle:UIStatusBarStyleLightContent];
+    [self setTitle:@"eShop App from IAD"];
 }
 
 

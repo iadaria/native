@@ -14,4 +14,11 @@
 
 #define NAV_BAR_BACKGROUND UIColorFromRGB(0x8D6E63)
 
+#define     APP_ENGLISH_LIGHT_FONT              @"Montserrat-Light"
+#define     APP_ENGLISH_REGULAR_FONT            @"Montserrat-Regular"
+#define     APP_ENGLISH_SEMI_BOLD_FONT          @"Montserrat-SemiBold"
+#define     APP_ENGLISH_BOLD_FONT               @"Montserrat-Bold"
+#define     APP_ENGLISH_MEDIUM                @"Montserrat-Medium"
+
+
 #endif /* PrefixHeader_pch */
