@@ -6,11 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Appliance.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        Appliance *appliance = [[Appliance alloc] initWithProductName:@"Table"];
+
+        NSLog(@"Name: %@, voltage: %d", [appliance productName], [appliance voltage]);
+        
+        Appliance *a = [[Appliance alloc] init];
+        NSLog(@"a is %@", a);
+        [a setProductName:@"Washing Machine"];
+        [a setVoltage:240];
+        NSLog(@"a is %@", a);
     }
     return 0;
 }
