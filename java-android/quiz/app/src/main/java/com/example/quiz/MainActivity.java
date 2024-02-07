@@ -3,6 +3,7 @@ package com.example.quiz;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
+    public static final String EXTRA_ANSWER_IS_TRUE = "com.example.quiz.answer_is_true";
     private Button mTrueButton;
     private Button mFalseButton;
     private ImageButton mNextButton;
@@ -97,6 +99,15 @@ public class MainActivity extends AppCompatActivity {
                 changeQuestion(+1);
             }
         });
+        Button mCheatButton = (Button)findViewById(R.id.cheat_button);
+        mCheatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CheatActivity.class);
+                startActivity(intent);
+            }
+        });
+
         if (savedInstanceState != null) {
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
             Log.d(TAG, String.format("mCurrentIndex=%d", mCurrentIndex));
