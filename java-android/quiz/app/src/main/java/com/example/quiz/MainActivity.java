@@ -1,8 +1,11 @@
 package com.example.quiz;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -16,20 +19,19 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
-    public static final String EXTRA_ANSWER_IS_TRUE = "com.example.quiz.answer_is_true";
-    private Button mTrueButton;
-    private Button mFalseButton;
-    private ImageButton mNextButton;
-    private ImageButton mPrevButton;
+    private static final String KEY_CHEATER = "isCheater";
+    private static final int REQUEST_CODE_CHEAT = 0;
     private TextView mQuestionTextView;
     private int mCurrentIndex = 0;
-    private Question[] mQuestionBank = new Question[] {
+    private final boolean[] mIsCheater = new boolean[5];
+    private final Question[] mQuestionBank = new Question[] {
         new Question(R.string.question_oceans, true),
         new Question(R.string.question_mideast, false),
         new Question(R.string.question_africa, false),
         new Question(R.string.question_americas, true),
         new Question(R.string.question_asia, true),
     };
+
     private void updateQuestion() {
         int question = mQuestionBank[mCurrentIndex].getTextResultId();
         mQuestionTextView.setText(question);
@@ -48,13 +50,22 @@ public class MainActivity extends AppCompatActivity {
 
         int messageResultId = 0;
 
-        if (userPressedTrue == answerIsTrue) {
-            messageResultId = R.string.correct_toast;
+        if (mIsCheater[mCurrentIndex]) {
+            messageResultId = R.string.judgment_toast;
         } else {
-            messageResultId = R.string.incorrect_toast;
+            if (userPressedTrue == answerIsTrue) {
+                messageResultId = R.string.correct_toast;
+            } else {
+                messageResultId = R.string.incorrect_toast;
+            }
         }
 
         Toast.makeText(this, messageResultId, Toast.LENGTH_SHORT).show();
+    }
+
+    private void changeCheater(boolean isCheater) {
+        Log.d(TAG, String.format("changeCheater for %d to %b", mCurrentIndex, isCheater));
+        mIsCheater[mCurrentIndex] = isCheater;
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,30 +75,30 @@ public class MainActivity extends AppCompatActivity {
         // Init question
         mQuestionTextView = (TextView)findViewById(R.id.question_text_view);
         // True and False buttons
-        mTrueButton = (Button) findViewById(R.id.true_button);
-        mTrueButton.setOnClickListener(new View.OnClickListener() {
+        Button trueButton = (Button) findViewById(R.id.true_button);
+        trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkAnswer(true);
             }
         });
-        mFalseButton = (Button) findViewById(R.id.false_button);
-        mFalseButton.setOnClickListener(new View.OnClickListener() {
+        Button falseButton = (Button) findViewById(R.id.false_button);
+        falseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkAnswer(false);
             }
         });
         // Next button
-        mNextButton = (ImageButton) findViewById(R.id.next_button);
-        mNextButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton nextButton = (ImageButton) findViewById(R.id.next_button);
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changeQuestion(+1);
             }
         });
-        mPrevButton = (ImageButton) findViewById(R.id.prev_button);
-        mPrevButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton prevButton = (ImageButton) findViewById(R.id.prev_button);
+        prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     changeQuestion(-1);
@@ -103,24 +114,45 @@ public class MainActivity extends AppCompatActivity {
         mCheatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CheatActivity.class);
-                startActivity(intent);
+                boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
+                Intent intent = CheatActivity.newIntent(MainActivity.this, answerIsTrue);
+                //startActivity(intent);
+                startActivityForResult(intent, REQUEST_CODE_CHEAT);
             }
         });
 
         if (savedInstanceState != null) {
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
-            Log.d(TAG, String.format("mCurrentIndex=%d", mCurrentIndex));
-            Log.d(TAG, savedInstanceState.toString());
+            boolean gotIsCheater = savedInstanceState.getBoolean(KEY_CHEATER, false);
+            changeCheater(gotIsCheater);
         }
         updateQuestion();
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode != Activity.RESULT_OK) {
+            return;
+        }
+        if (requestCode == REQUEST_CODE_CHEAT) {
+            if (data == null) {
+                return;
+            }
+            boolean gotIsCheater = CheatActivity.wasAnswerShown(data);
+            Log.i(TAG, String.format("Got data from CheatActivity: mIsCheater=%b", gotIsCheater));
+            changeCheater(gotIsCheater);
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
     public void onSaveInstanceState(@NonNull  Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.i(TAG, "onSaveInstanceState");
+        Log.i(TAG, String.format(
+            "onSaveInstanceState mCurrentIndex=%d, mIsCheater=%b",
+            mCurrentIndex, mIsCheater[mCurrentIndex]));
         outState.putInt(KEY_INDEX, mCurrentIndex);
+        outState.putBoolean(KEY_CHEATER, mIsCheater[mCurrentIndex]);
     }
 
     @Override

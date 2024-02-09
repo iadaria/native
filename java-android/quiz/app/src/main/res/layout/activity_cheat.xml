@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/warningTextView"
+        android:id="@+id/warning_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="284dp"
@@ -18,22 +18,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/answerTextView"
+        android:id="@+id/answer_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
         android:text="@string/correct_toast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/warningTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/warning_text_view" />
 
     <Button
-        android:id="@+id/showAnswerButton"
+        android:id="@+id/show_answer_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_answer_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/answer_text_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>
