@@ -1,8 +1,10 @@
-package com.learning.spotifyfromiad;
+package com.learning.spotifyfromiad.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.learning.spotifyfromiad.R;
 
 public class MainActivity extends AppCompatActivity {
 
