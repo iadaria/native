@@ -65,6 +65,18 @@ public class ImagePickerModule extends ReactContextBaseJavaModule {
       promise.reject(E_ACTIVITY_DOES_NOT_EXIST, "Activity doesn't exist");
       return;
     }
+
+    mPikcerPromise = promise;
+
+    try {
+      final Intent galleryIntent = new Intent(Intent.ACTION_PICK);
+      galleryIntent.setType("image/*");
+      final  Intent chooserIntent = Intent.createChooser(galleryIntent, "Pick an image");
+      currentActivity.startActivityForResult(chooserIntent, IMAGE_PICKER_REQUEST);
+    } catch (Exception e) {
+      mPikcerPromise.reject(E_FAILED_TO_SHOW_PICKER, e);
+      mPikcerPromise = null;
+    }
   }
 
 }

@@ -1,6 +1,6 @@
 import {Button, NativeEventEmitter, NativeModules, View} from 'react-native';
 import React, { useEffect } from 'react';
-import CalendarModule from './CalendarModule';
+import CalendarModule from '../modules/CalendarModule';
 
 const { DEFAULT_EVENT_NAME } = CalendarModule.getConstants()
 

@@ -20,7 +20,8 @@ import {
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import NewModuleButton from './src/NewModuleButton';
+import NewModuleButton from './src/components/NewModuleButton';
+import ImagePicker from './src/components/ImagePicker';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -74,6 +75,7 @@ function App(): React.JSX.Element {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
         <NewModuleButton />
+        <ImagePicker />
         </View>
       </ScrollView>
     </SafeAreaView>
