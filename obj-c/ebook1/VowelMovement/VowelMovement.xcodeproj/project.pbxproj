@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43D77C1B2B70D7CA0089F4EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D77C1A2B70D7CA0089F4EA /* main.m */; };
-		43DB5D242B77BD7C00AFAB68 /* NSString+VowelCounting.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DB5D232B77BD7C00AFAB68 /* NSString+VowelCounting.m */; };
+		43DB5D322B77C0A300AFAB68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DB5D312B77C0A300AFAB68 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		43D77C152B70D7CA0089F4EA /* CopyFiles */ = {
+		43DB5D2C2B77C0A300AFAB68 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,14 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		43D77C172B70D7CA0089F4EA /* VowelCounter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VowelCounter; sourceTree = BUILT_PRODUCTS_DIR; };
-		43D77C1A2B70D7CA0089F4EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		43DB5D222B77BCF400AFAB68 /* NSString+VowelCounting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+VowelCounting.h"; sourceTree = "<group>"; };
-		43DB5D232B77BD7C00AFAB68 /* NSString+VowelCounting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+VowelCounting.m"; sourceTree = "<group>"; };
+		43DB5D2E2B77C0A300AFAB68 /* VowelMovement */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VowelMovement; sourceTree = BUILT_PRODUCTS_DIR; };
+		43DB5D312B77C0A300AFAB68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		43D77C142B70D7CA0089F4EA /* Frameworks */ = {
+		43DB5D2B2B77C0A300AFAB68 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,67 +38,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		43D77C0E2B70D7CA0089F4EA = {
+		43DB5D252B77C0A300AFAB68 = {
 			isa = PBXGroup;
 			children = (
-				43D77C192B70D7CA0089F4EA /* VowelCounter */,
-				43D77C182B70D7CA0089F4EA /* Products */,
+				43DB5D302B77C0A300AFAB68 /* VowelMovement */,
+				43DB5D2F2B77C0A300AFAB68 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		43D77C182B70D7CA0089F4EA /* Products */ = {
+		43DB5D2F2B77C0A300AFAB68 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				43D77C172B70D7CA0089F4EA /* VowelCounter */,
+				43DB5D2E2B77C0A300AFAB68 /* VowelMovement */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		43D77C192B70D7CA0089F4EA /* VowelCounter */ = {
+		43DB5D302B77C0A300AFAB68 /* VowelMovement */ = {
 			isa = PBXGroup;
 			children = (
-				43D77C1A2B70D7CA0089F4EA /* main.m */,
-				43DB5D222B77BCF400AFAB68 /* NSString+VowelCounting.h */,
-				43DB5D232B77BD7C00AFAB68 /* NSString+VowelCounting.m */,
+				43DB5D312B77C0A300AFAB68 /* main.m */,
 			);
-			path = VowelCounter;
+			path = VowelMovement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		43D77C162B70D7CA0089F4EA /* VowelCounter */ = {
+		43DB5D2D2B77C0A300AFAB68 /* VowelMovement */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43D77C1E2B70D7CA0089F4EA /* Build configuration list for PBXNativeTarget "VowelCounter" */;
+			buildConfigurationList = 43DB5D352B77C0A300AFAB68 /* Build configuration list for PBXNativeTarget "VowelMovement" */;
 			buildPhases = (
-				43D77C132B70D7CA0089F4EA /* Sources */,
-				43D77C142B70D7CA0089F4EA /* Frameworks */,
-				43D77C152B70D7CA0089F4EA /* CopyFiles */,
+				43DB5D2A2B77C0A300AFAB68 /* Sources */,
+				43DB5D2B2B77C0A300AFAB68 /* Frameworks */,
+				43DB5D2C2B77C0A300AFAB68 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = VowelCounter;
-			productName = VowelCounter;
-			productReference = 43D77C172B70D7CA0089F4EA /* VowelCounter */;
+			name = VowelMovement;
+			productName = VowelMovement;
+			productReference = 43DB5D2E2B77C0A300AFAB68 /* VowelMovement */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		43D77C0F2B70D7CA0089F4EA /* Project object */ = {
+		43DB5D262B77C0A300AFAB68 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					43D77C162B70D7CA0089F4EA = {
+					43DB5D2D2B77C0A300AFAB68 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = 43D77C122B70D7CA0089F4EA /* Build configuration list for PBXProject "VowelCounter" */;
+			buildConfigurationList = 43DB5D292B77C0A300AFAB68 /* Build configuration list for PBXProject "VowelMovement" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,30 +104,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 43D77C0E2B70D7CA0089F4EA;
-			productRefGroup = 43D77C182B70D7CA0089F4EA /* Products */;
+			mainGroup = 43DB5D252B77C0A300AFAB68;
+			productRefGroup = 43DB5D2F2B77C0A300AFAB68 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				43D77C162B70D7CA0089F4EA /* VowelCounter */,
+				43DB5D2D2B77C0A300AFAB68 /* VowelMovement */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		43D77C132B70D7CA0089F4EA /* Sources */ = {
+		43DB5D2A2B77C0A300AFAB68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43DB5D242B77BD7C00AFAB68 /* NSString+VowelCounting.m in Sources */,
-				43D77C1B2B70D7CA0089F4EA /* main.m in Sources */,
+				43DB5D322B77C0A300AFAB68 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		43D77C1C2B70D7CA0089F4EA /* Debug */ = {
+		43DB5D332B77C0A300AFAB68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -193,7 +187,7 @@
 			};
 			name = Debug;
 		};
-		43D77C1D2B70D7CA0089F4EA /* Release */ = {
+		43DB5D342B77C0A300AFAB68 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -247,7 +241,7 @@
 			};
 			name = Release;
 		};
-		43D77C1F2B70D7CA0089F4EA /* Debug */ = {
+		43DB5D362B77C0A300AFAB68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -255,7 +249,7 @@
 			};
 			name = Debug;
 		};
-		43D77C202B70D7CA0089F4EA /* Release */ = {
+		43DB5D372B77C0A300AFAB68 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -266,25 +260,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		43D77C122B70D7CA0089F4EA /* Build configuration list for PBXProject "VowelCounter" */ = {
+		43DB5D292B77C0A300AFAB68 /* Build configuration list for PBXProject "VowelMovement" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				43D77C1C2B70D7CA0089F4EA /* Debug */,
-				43D77C1D2B70D7CA0089F4EA /* Release */,
+				43DB5D332B77C0A300AFAB68 /* Debug */,
+				43DB5D342B77C0A300AFAB68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43D77C1E2B70D7CA0089F4EA /* Build configuration list for PBXNativeTarget "VowelCounter" */ = {
+		43DB5D352B77C0A300AFAB68 /* Build configuration list for PBXNativeTarget "VowelMovement" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				43D77C1F2B70D7CA0089F4EA /* Debug */,
-				43D77C202B70D7CA0089F4EA /* Release */,
+				43DB5D362B77C0A300AFAB68 /* Debug */,
+				43DB5D372B77C0A300AFAB68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 43D77C0F2B70D7CA0089F4EA /* Project object */;
+	rootObject = 43DB5D262B77C0A300AFAB68 /* Project object */;
 }
