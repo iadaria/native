@@ -22,6 +22,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import NewModuleButton from './src/components/NewModuleButton';
 import ImagePicker from './src/components/ImagePicker';
+import YandexLoginButton from './src/components/YandexLoginButton';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -76,6 +77,7 @@ function App(): React.JSX.Element {
           }}>
         <NewModuleButton />
         <ImagePicker />
+        <YandexLoginButton />
         </View>
       </ScrollView>
     </SafeAreaView>

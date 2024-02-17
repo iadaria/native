@@ -524,3 +524,5 @@ vendor/
 .externalNativeBuild
 .cxx
 local.properties
+
+/app/build.gradle

@@ -17,7 +17,8 @@ public class MyAppPackage implements ReactPackage {
   public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactApplicationContext) {
     List<NativeModule> modules = new ArrayList<>();
     modules.add(new CalendarModule(reactApplicationContext));
-    modules.add(new ImagePickerModule((reactApplicationContext)));
+    modules.add(new ImagePickerModule(reactApplicationContext));
+    modules.add(new YandexLoginModule(reactApplicationContext));
     return modules;
   }
 
