@@ -1,36 +1,26 @@
 package com.awesomeproject;
 
-
-import static androidx.activity.result.ActivityResultCallerKt.registerForActivityResult;
-
-import static com.facebook.infer.annotation.Assertions.assertNotNull;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-
 import com.facebook.react.bridge.ActivityEventListener;
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
 import com.yandex.authsdk.YandexAuthException;
 import com.yandex.authsdk.YandexAuthLoginOptions;
 import com.yandex.authsdk.YandexAuthOptions;
 import com.yandex.authsdk.YandexAuthResult;
 import com.yandex.authsdk.YandexAuthSdk;
-import com.yandex.authsdk.YandexAuthSdkContract;
 import com.yandex.authsdk.YandexAuthToken;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class YandexLoginModule extends ReactContextBaseJavaModule {
   private final String TAG = "YandexLoginModule";
@@ -115,11 +105,10 @@ public class YandexLoginModule extends ReactContextBaseJavaModule {
   private void resolveToken() {
 
     try {
-      JSONObject json = new JSONObject();
-      json.put("token", mYandexAuthToken.getValue());
-      json.put("expiresIn", mYandexAuthToken.getExpiresIn());
-
-      mYandexLoginPromise.resolve(json.toString());
+      WritableMap params = Arguments.createMap();
+      params.putString("token", mYandexAuthToken.getValue());
+      params.putString("expiresIn", String.valueOf(mYandexAuthToken.getExpiresIn()));
+      mYandexLoginPromise.resolve(params);
 
       Log.d(TAG, "expire at " + mYandexAuthToken.getExpiresIn());
     } catch (Exception e) {
