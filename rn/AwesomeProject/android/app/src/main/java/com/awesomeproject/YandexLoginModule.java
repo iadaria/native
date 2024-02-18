@@ -3,6 +3,8 @@ package com.awesomeproject;
 
 import static androidx.activity.result.ActivityResultCallerKt.registerForActivityResult;
 
+import static com.facebook.infer.annotation.Assertions.assertNotNull;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
@@ -24,7 +26,11 @@ import com.yandex.authsdk.YandexAuthLoginOptions;
 import com.yandex.authsdk.YandexAuthOptions;
 import com.yandex.authsdk.YandexAuthResult;
 import com.yandex.authsdk.YandexAuthSdk;
+import com.yandex.authsdk.YandexAuthSdkContract;
 import com.yandex.authsdk.YandexAuthToken;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class YandexLoginModule extends ReactContextBaseJavaModule {
   private final String TAG = "YandexLoginModule";
@@ -32,39 +38,39 @@ public class YandexLoginModule extends ReactContextBaseJavaModule {
   private static final String E_ACTIVITY_DOES_NOT_EXIST = "E_ACTIVITY_DOES_NOT_EXIST";
   private static final String E_YANDEX_LOGIN_CANCELLED = "E_YANDEX_LOGIN_CANCELLED";
   private static final String E_FAILED_TO_SHOW_LOGIN = "E_FAILED_TO_SHOW_LOGIN";
-  private static final String E_NO_ACCOUNT_FOUND="E_NO_ACCOUNT_FOUND";
+  private static final String E_FAILED_HANDLE_RESULT = "E_FAILED_HANDLE_RESULT";
   @Nullable
   private Promise mYandexLoginPromise;
   @Nullable
   private YandexAuthToken mYandexAuthToken;
   @Nullable
-  private YandexAuthSdk mYandexAuthSdk;
+  private final YandexAuthSdk mYandexAuthSdk;
   YandexLoginModule(ReactApplicationContext reactContext) {
     super(reactContext);
-    reactContext.addActivityEventListener(mActivityEventListener);
-    mYandexAuthSdk = YandexAuthSdk.create(new YandexAuthOptions(reactContext));
+    //Log.d(TAG, "[onActivityResult] I am here " + String.valueOf(resultCode) + ", " + String.valueOf(data.getData()));
+    ActivityEventListener activityEventListener = new BaseActivityEventListener() {
+      @Override
+      public void onActivityResult(Activity activity, int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == YANDEX_LOGIN_REQUEST) {
+          if (mYandexLoginPromise != null && mYandexAuthSdk != null) {
+            YandexAuthResult result = mYandexAuthSdk.getContract().parseResult(resultCode, data);
+            handleResult(result);
+          }
+        } else {
+          super.onActivityResult(activity, requestCode, resultCode, data);
+        }
+      }
+    };
 
+    reactContext.addActivityEventListener(activityEventListener);
+
+    mYandexAuthSdk = YandexAuthSdk.create(new YandexAuthOptions(reactContext));
   }
   @NonNull
   @Override
   public String getName() {
     return "YandexLoginModule";
   }
-
-  private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
-    @Override
-    public void onActivityResult(Activity activity, int requestCode, int resultCode, @Nullable Intent data) {
-      //Log.d(TAG, "[onActivityResult] I am here " + String.valueOf(resultCode) + ", " + String.valueOf(data.getData()));
-      if (requestCode == YANDEX_LOGIN_REQUEST) {
-        if (mYandexLoginPromise != null) {
-          YandexAuthResult result = mYandexAuthSdk.getContract().parseResult(resultCode, data);
-          handleResult(result);
-        }
-      } else {
-        super.onActivityResult(activity, requestCode, resultCode, data);
-      }
-    }
-  };
 
   @ReactMethod
   public void login(final String email, final Promise promise) {
@@ -78,12 +84,9 @@ public class YandexLoginModule extends ReactContextBaseJavaModule {
     mYandexLoginPromise = promise;
 
     if (mYandexAuthToken != null) {
-      promise.resolve(mYandexAuthToken.getValue());
+      resolveToken();
       return;
     }
-
-    // Dev
-    Log.d(TAG, "Create event called with name: " + email);
 
     try {
       final YandexAuthLoginOptions loginOptions = new YandexAuthLoginOptions();
@@ -96,12 +99,32 @@ public class YandexLoginModule extends ReactContextBaseJavaModule {
   }
 
   private void handleResult(YandexAuthResult result) {
+    if (mYandexLoginPromise == null) throw new Error("Couldn't get promise from React Native app");
+
     if (result instanceof YandexAuthResult.Success) {
       mYandexAuthToken =  ((YandexAuthResult.Success) result).getToken();
-      Log.d(TAG, "Got token!" + String.valueOf(mYandexAuthToken));
+      resolveToken();
+
     } else if (result instanceof  YandexAuthResult.Failure) {
       YandexAuthException error = ((YandexAuthResult.Failure) result).getException();
-      mYandexLoginPromise.reject("[Yandex handleResult()/Error]", error);
+      mYandexLoginPromise.reject("Getting the yandex token fails", error);
+    }
+    Log.d(TAG, "The result is cancelled");
+  }
+
+  private void resolveToken() {
+
+    try {
+      JSONObject json = new JSONObject();
+      json.put("token", mYandexAuthToken.getValue());
+      json.put("expiresIn", mYandexAuthToken.getExpiresIn());
+
+      mYandexLoginPromise.resolve(json.toString());
+
+      Log.d(TAG, "expire at " + mYandexAuthToken.getExpiresIn());
+    } catch (Exception e) {
+      mYandexLoginPromise.reject(E_FAILED_HANDLE_RESULT, e);
+      mYandexLoginPromise = null;
     }
   }
 

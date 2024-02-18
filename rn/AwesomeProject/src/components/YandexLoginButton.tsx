@@ -6,7 +6,7 @@ const YandexLoginButton = () => {
     async function onYandexLogin() {
         try {
             const data = await YandexLoginModule.login("dasha.box@yandex.ru");
-            console.log("[Yandex Login]", {data});
+            console.log("[Yandex Login]", data);
         } catch(e) {
             console.log("[Yandex Login/Error]", {e})
         }
