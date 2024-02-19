@@ -2,10 +2,12 @@ package com.awesomeproject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.Arguments;
@@ -21,6 +23,8 @@ import com.yandex.authsdk.YandexAuthOptions;
 import com.yandex.authsdk.YandexAuthResult;
 import com.yandex.authsdk.YandexAuthSdk;
 import com.yandex.authsdk.YandexAuthToken;
+
+import java.util.Base64;
 
 public class YandexLoginModule extends ReactContextBaseJavaModule {
   private final String TAG = "YandexLoginModule";
@@ -63,6 +67,16 @@ public class YandexLoginModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void getClientId(final Promise promise) {
+    try {
+      Integer cliendId = BuildConfig.CLIEND_ID;
+      Log.i(TAG, String.valueOf(BuildConfig.CLIEND_ID));
+      promise.resolve(cliendId);
+    } catch(Exception e) {
+      promise.reject("Error to get buildConfig. Did you fill in cliendId?", e);
+    }
+  }
+  @ReactMethod
   public void login(final String email, final Promise promise) {
     Activity currentActivity = getCurrentActivity();
 
@@ -95,6 +109,7 @@ public class YandexLoginModule extends ReactContextBaseJavaModule {
       mYandexAuthToken =  ((YandexAuthResult.Success) result).getToken();
       resolveToken();
 
+
     } else if (result instanceof  YandexAuthResult.Failure) {
       YandexAuthException error = ((YandexAuthResult.Failure) result).getException();
       mYandexLoginPromise.reject("Getting the yandex token fails", error);
@@ -116,5 +131,4 @@ public class YandexLoginModule extends ReactContextBaseJavaModule {
       mYandexLoginPromise = null;
     }
   }
-
 }
