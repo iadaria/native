@@ -6,12 +6,13 @@ import { getUserInfo } from '../utils/getUserInfo';
 const YandexLoginButton = () => {
   async function onYandexLogin() {
     try {
-      const cliendId = await YandexLoginModule.getClientId();
-      const data = await YandexLoginModule.login("dasha.box@yandex.ru");
+      const clientId = await YandexLoginModule.getClientId();
+      console.log({ clientId});
+      //const data = await YandexLoginModule.login("dasha.box@yandex.ru");
 
-      console.log("[Yandex Login]", {cliendId, authToken: data.token});
-      const userInfo = await getUserInfo(cliendId, data.token);
-      console.log({ userInfo});
+      //console.log("[Yandex Login]", {cliendId, authToken: data.token});
+      //const userInfo = await getUserInfo(cliendId, data.token);
+      //console.log({ userInfo});
     } catch (e) {
       console.log('[Yandex Login/Error]', {e});
     }

@@ -1,5 +1,7 @@
 package com.awesomeproject;
 
+import static android.provider.Settings.System.getString;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -66,12 +68,16 @@ public class YandexLoginModule extends ReactContextBaseJavaModule {
     return "YandexLoginModule";
   }
 
+  // https://stackoverflow.com/questions/28108443/how-to-use-resvalu
+  // //resValue returns int instead stringe
   @ReactMethod
   public void getClientId(final Promise promise) {
     try {
-      Integer cliendId = BuildConfig.CLIEND_ID;
-      Log.i(TAG, String.valueOf(BuildConfig.CLIEND_ID));
-      promise.resolve(cliendId);
+      //Integer cliendId = BuildConfig.CLIEND_ID;
+      int s = R.string.client_id;
+      String clientId = String.valueOf(R.string.client_id);
+      Log.i(TAG, clientId);
+      promise.resolve(clientId);
     } catch(Exception e) {
       promise.reject("Error to get buildConfig. Did you fill in cliendId?", e);
     }
