@@ -11,42 +11,39 @@ class ViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
     
-    var number: Int = 0
-    var round: Int = 1
-    var points: Int = 0
+    var game: Game!
+    
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
-        // generate a random number
-        self.number = Int.random(in: 1...50)
-        // show the random number in Label
-        self.label.text = String(self.number)
+        game = Game(startValue: 1, endValue: 50, rounds: 2)
+        // Обновляем данные о текущем значении загаданного числа
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
-
+    
+    // Проверка выбранного пользователем числа
     @IBAction func checkNumber() {
-        let numSlider = Int(self.slider.value.rounded())
-        if numSlider > self.number {
-            self.points += 50 - numSlider + self.number
-        } else if numSlider < self.number {
-            self.points += 50 - self.number + numSlider
+        game.currentRound.calculateScore(with: Int(slider.value))
+        if game.isGameEnded {
+            showAlertWith(score: game.currentRound.score)
+            game.restartGame()
         } else {
-            self.points += 50
+            game.startNewRound()
         }
-        if self.round == 5 {
-            let alert = UIAlertController(
-                title: "Game is over",
-                message: "You earned \(self.points) points",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Begin again", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            self.round = 1
-            self.points = 0
-        } else {
-            self.round += 1
-        }
-        // generate a random number
-        self.number = Int.random(in: 1...50)
-        self.label.text = String(self.number)
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
+    }
+    
+    private func updateLabelWithSecretNumber(newText: String) {
+        label.text = newText
+    }
+    
+    private func showAlertWith(score: Int) {
+        let alert = UIAlertController(
+            title: "Game is over",
+            message: "You earned \(score) points",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Begin again", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func loadView() {
