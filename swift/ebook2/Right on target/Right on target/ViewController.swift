@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var game: Game<SecretNumbericValue>!
+    
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
 
@@ -15,13 +17,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
-
+        game = (GameFactory.getNumericGame() as! Game<SecretNumbericValue>)
+        updateLabelWithSecretNumber(newText: String(game.secretValue.value))
     }
     
     // Проверка выбранного пользователем числа
     @IBAction func checkNumber() {
-
-
+        var userSecretValue = game.secretValue
+        userSecretValue.value = Int(slider.value)
+        game.calculateScore(secretValue: game.secretValue, userValue: userSecretValue)
+        if game.isGameEnded {
+            showAlertWith(score: game.score)
+            game.restartGame()
+        } else {
+            game.startNewRound()
+        }
+        updateLabelWithSecretNumber(newText: String(game.secretValue.value))
     }
     
     private func updateLabelWithSecretNumber(newText: String) {
