@@ -31,6 +31,16 @@
                                     <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AMX-fN-vM0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwu-lO-xc8">
+                                <rect key="frame" x="30" y="515" width="333" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Изменить с помощью seque">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Qje-I5-3Dw" kind="show" identifier="toEditScreen" id="nci-XV-WUx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -40,8 +50,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cqI-7O-Qps" secondAttribute="bottom" constant="401" id="CHE-TC-HPd"/>
                             <constraint firstItem="cqI-7O-Qps" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="N8U-WU-nDS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SHe-C8-Opn" secondAttribute="trailing" constant="30" id="RsC-IH-lG6"/>
+                            <constraint firstItem="cwu-lO-xc8" firstAttribute="top" secondItem="SHe-C8-Opn" secondAttribute="bottom" constant="30" id="Uxq-NR-tLW"/>
                             <constraint firstItem="cqI-7O-Qps" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="278" id="fEB-Y2-zMk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cqI-7O-Qps" secondAttribute="trailing" constant="161" id="i5z-at-re0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cwu-lO-xc8" secondAttribute="trailing" constant="30" id="nS7-9e-4yv"/>
+                            <constraint firstItem="cwu-lO-xc8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="y1T-C9-VY8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scene A" largeTitleDisplayMode="always" id="EMU-jM-7er"/>
@@ -51,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040.4580152671756" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1013" y="-27"/>
         </scene>
         <!--Scene B-->
         <scene sceneID="M2U-Qi-fz8">
@@ -61,20 +74,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dab-fk-iZs">
-                                <rect key="frame" x="30" y="395" width="333" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text from the Scene A" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dab-fk-iZs">
+                                <rect key="frame" x="30" y="341" width="333" height="38"/>
                                 <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoX-oY-qgc">
+                                <rect key="frame" x="30" y="409" width="333" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Сохранить с помощью свойства">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDataWithProperty:" destination="Qje-I5-3Dw" eventType="touchUpInside" id="Gbj-ug-J6p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cyi-kT-Rbr"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="cyi-kT-Rbr" firstAttribute="bottom" secondItem="dab-fk-iZs" secondAttribute="bottom" constant="389" id="FHP-rr-xjl"/>
-                            <constraint firstItem="cyi-kT-Rbr" firstAttribute="trailing" secondItem="dab-fk-iZs" secondAttribute="trailing" constant="30" id="G1o-iu-SHy"/>
-                            <constraint firstItem="dab-fk-iZs" firstAttribute="leading" secondItem="cyi-kT-Rbr" secondAttribute="leading" constant="30" id="b8L-Mw-yl8"/>
-                            <constraint firstItem="dab-fk-iZs" firstAttribute="top" secondItem="cyi-kT-Rbr" secondAttribute="top" constant="336" id="nM9-5K-0ZL"/>
+                            <constraint firstItem="cyi-kT-Rbr" firstAttribute="trailing" secondItem="KoX-oY-qgc" secondAttribute="trailing" constant="30" id="Okz-oN-UgW"/>
+                            <constraint firstItem="dab-fk-iZs" firstAttribute="centerX" secondItem="KoX-oY-qgc" secondAttribute="centerX" id="dae-gm-RsG"/>
+                            <constraint firstItem="KoX-oY-qgc" firstAttribute="leading" secondItem="cyi-kT-Rbr" secondAttribute="leading" constant="30" id="e0w-QF-ioM"/>
+                            <constraint firstItem="dab-fk-iZs" firstAttribute="top" secondItem="cyi-kT-Rbr" secondAttribute="top" constant="238" id="goP-xC-sYS"/>
+                            <constraint firstItem="dab-fk-iZs" firstAttribute="leading" secondItem="KoX-oY-qgc" secondAttribute="leading" id="yNe-ch-j0d"/>
+                            <constraint firstItem="KoX-oY-qgc" firstAttribute="top" secondItem="dab-fk-iZs" secondAttribute="bottom" constant="30" id="zpH-vP-Qcd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scene B" largeTitleDisplayMode="always" id="iWb-vq-laJ"/>
