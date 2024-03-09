@@ -40,8 +40,8 @@ public class CrimeListFragment extends Fragment {
 
     @Override
     public void onClick(View v) {
-      Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
-      startActivityForResult(intent, REQUEST_CRIME);
+      Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getId());
+      startActivity(intent);
     }
   }
   private class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
