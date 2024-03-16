@@ -3,6 +3,9 @@ package com.learning.criminalintentiad;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +22,9 @@ import java.util.List;
 
 public class CrimeListFragment extends Fragment {
   private static final int REQUEST_CRIME = 1;
+  private RecyclerView mCrimeRecycleView;
+  private boolean mSubtitleVisible;
+  private static final String SAVE_SUBTITLE_VISIBLE = "subtitle";
   private class CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private Crime mCrime;
     private final TextView mTitleTextView;
@@ -78,7 +85,6 @@ public class CrimeListFragment extends Fragment {
     super.onActivityResult(requestCode, resultCode, data);
   }
 
-  private RecyclerView mCrimeRecycleView;
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -88,9 +94,19 @@ public class CrimeListFragment extends Fragment {
     mCrimeRecycleView = (RecyclerView) view.findViewById(R.id.crime_recycler_view);
     mCrimeRecycleView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+    if (savedInstanceState != null) {
+      mSubtitleVisible = savedInstanceState.getBoolean(SAVE_SUBTITLE_VISIBLE);
+    }
+
     updateUI();
 
     return view;
+  }
+
+  @Override
+  public void onSaveInstanceState(@NonNull Bundle outState) {
+    super.onSaveInstanceState(outState);
+    outState.putBoolean(SAVE_SUBTITLE_VISIBLE, mSubtitleVisible);
   }
 
   @Override
@@ -98,7 +114,6 @@ public class CrimeListFragment extends Fragment {
     super.onResume();
     updateUI();
   }
-
   private void updateUI() {
     CrimeAdapter mAdapter = null;
     CrimeLab crimeLab = CrimeLab.get(getActivity());
@@ -111,5 +126,58 @@ public class CrimeListFragment extends Fragment {
       mAdapter.notifyDataSetChanged();
     }
 
+    updateSubtitle();
+
+  }
+
+  @Override
+  public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setHasOptionsMenu(true);
+  }
+
+  @Override
+  public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+    super.onCreateOptionsMenu(menu, inflater);
+    inflater.inflate(R.menu.fragment_crime_list, menu);
+
+    MenuItem subtitleItem = menu.findItem(R.id.menu_item_show_subtitle);
+    if (mSubtitleVisible) {
+      subtitleItem.setTitle(R.string.hide_subtitle);
+    } else {
+      subtitleItem.setTitle(R.string.show_subtitle);
+    }
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+    if (item.getItemId() == R.id.menu_item_new_crime) {
+      Crime crime = new Crime();
+      CrimeLab.get(getActivity()).addCrime(crime);
+      Intent intent = CrimePagerActivity.newIntent(getActivity(), crime.getId());
+      startActivity(intent);
+      return true;
+    }
+    if (item.getItemId() == R.id.menu_item_show_subtitle) {
+      mSubtitleVisible = !mSubtitleVisible;
+      getActivity().invalidateOptionsMenu();
+      updateSubtitle();
+      return true;
+    }
+    return super.onOptionsItemSelected(item);
+  }
+
+  private void updateSubtitle() {
+    CrimeLab crimeLab = CrimeLab.get(getActivity());
+    int crimeCount = crimeLab.getCrimes().size();
+    String subtitle = getResources().getQuantityString(R.plurals.subtitle_plural, crimeCount, crimeCount);
+
+    if (!mSubtitleVisible) {
+      subtitle = null;
+    }
+
+    AppCompatActivity activity = (AppCompatActivity) getActivity();
+    activity.getSupportActionBar().setSubtitle(subtitle);
   }
 }

@@ -7,17 +7,20 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -27,10 +30,13 @@ import java.util.UUID;
 public class CrimeFragment extends Fragment {
   private static final String ARG_CRIME_ID = "crime_id";
   private static final String DIALOG_DATE = "DialogDate";
+  private static final String DIALOG_TIME = "DialogTime";
 
   private static final int REQUEST_DATE = 0;
+  private static final int REQUEST_TIME = 1;
   private Crime mCrime;
   Button mDateButton;
+  Button mTimeButton;
 
   public static CrimeFragment newInstance(UUID crimeId) {
     Bundle args = new Bundle();
@@ -45,6 +51,8 @@ public class CrimeFragment extends Fragment {
     super.onCreate(savedInstanceState);
     UUID crimeId = (UUID) getArguments().getSerializable(ARG_CRIME_ID);
     mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
+
+    setHasOptionsMenu(true);
   }
 
   public void returnResult() {
@@ -73,7 +81,6 @@ public class CrimeFragment extends Fragment {
     });
 
     mDateButton = (Button) view.findViewById(R.id.crime_date);
-    CharSequence date = DateFormat.format("EEEE, MMM dd, yyyy", mCrime.getDate());
     updateDate();
     mDateButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -85,6 +92,26 @@ public class CrimeFragment extends Fragment {
         dialog.show(manager, DIALOG_DATE);
       }
     });
+
+    mTimeButton = (Button) view.findViewById(R.id.crime_time);
+    updateTime();
+    mTimeButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        FragmentManager manager = getParentFragmentManager();
+        manager.setFragmentResultListener(TimePickerFragment.REQUEST_TIME_KEY, getActivity(), new FragmentResultListener() {
+          @Override
+          public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+            Date date = (Date) result.getSerializable(TimePickerFragment.EXTRA_TIME);
+            mCrime.setDate(date);
+            updateTime();
+          }
+        });
+        TimePickerFragment dialog = TimePickerFragment.newInstance(mCrime.getDate());
+        dialog.show(manager, DIALOG_TIME);
+      }
+    });
+
 
     CheckBox mSolvedCheckBox = (CheckBox)view.findViewById(R.id.crime_solved);
     mSolvedCheckBox.setChecked(mCrime.isSolved());
@@ -108,9 +135,39 @@ public class CrimeFragment extends Fragment {
       mCrime.setDate(date);
       updateDate();
     }
+
+    /*if (requestCode == REQUEST_TIME) {
+      Date date = (Date) data.getSerializableExtra(TimePickerFragment.EXTRA_TIME);
+      mCrime.setDate(date);
+      updateTime();
+    }*/
   }
 
   private void updateDate() {
-    mDateButton.setText(mCrime.getDate().toString());
+    CharSequence date = DateFormat.format("EEEE, MMM dd, yyyy", mCrime.getDate());
+    mDateButton.setText(date.toString());
+  }
+
+  private void updateTime() {
+    CharSequence time = DateFormat.format("HH:mm:ss", mCrime.getDate());
+    mTimeButton.setText(time.toString());
+  }
+
+  @Override
+  public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+    super.onCreateOptionsMenu(menu, inflater);
+    inflater.inflate(R.menu.fragment_crime, menu);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+    if (item.getItemId() == R.id.menu_item_delete_crime) {
+      CrimeLab.get(getActivity()).removeCrime(mCrime);
+      getActivity().finish();
+      return true;
+    }
+
+    return super.onOptionsItemSelected(item);
   }
 }
