@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		430C4E192BA5D4770052CF4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E182BA5D4770052CF4E /* AppDelegate.swift */; };
+		430C4E1B2BA5D4770052CF4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E1A2BA5D4770052CF4E /* SceneDelegate.swift */; };
+		430C4E1D2BA5D4770052CF4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E1C2BA5D4770052CF4E /* ViewController.swift */; };
+		430C4E202BA5D4770052CF4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430C4E1E2BA5D4770052CF4E /* Main.storyboard */; };
+		430C4E222BA5D4790052CF4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430C4E212BA5D4790052CF4E /* Assets.xcassets */; };
+		430C4E252BA5D4790052CF4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430C4E232BA5D4790052CF4E /* LaunchScreen.storyboard */; };
+		430C4E342BA5D5040052CF4E /* ApplicationPrimacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E332BA5D5040052CF4E /* ApplicationPrimacy.swift */; };
+		430C4E372BA5D5CB0052CF4E /* YandexLoginSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E362BA5D5CB0052CF4E /* YandexLoginSDK.swift */; };
+		430C4E392BA5E3E40052CF4E /* AuthorizationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E382BA5E3E40052CF4E /* AuthorizationParameters.swift */; };
+		430C4E3B2BA5E5AB0052CF4E /* EnvironmentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E3A2BA5E5AB0052CF4E /* EnvironmentInfo.swift */; };
+		437FC2582BA6D2F000284541 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC2572BA6D2F000284541 /* Storage.swift */; };
+		437FC25A2BA6D85100284541 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC2592BA6D85100284541 /* SecureStorage.swift */; };
+		437FC25C2BA6EE7300284541 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC25B2BA6EE7300284541 /* StorageError.swift */; };
+		437FC25E2BA6EF8800284541 /* YandexLoginSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC25D2BA6EF8800284541 /* YandexLoginSDKError.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		430C4E152BA5D4770052CF4E /* recall-yandex-sdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "recall-yandex-sdk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		430C4E182BA5D4770052CF4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		430C4E1A2BA5D4770052CF4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		430C4E1C2BA5D4770052CF4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		430C4E1F2BA5D4770052CF4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		430C4E212BA5D4790052CF4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		430C4E242BA5D4790052CF4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		430C4E262BA5D4790052CF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		430C4E332BA5D5040052CF4E /* ApplicationPrimacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationPrimacy.swift; sourceTree = "<group>"; };
+		430C4E362BA5D5CB0052CF4E /* YandexLoginSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginSDK.swift; sourceTree = "<group>"; };
+		430C4E382BA5E3E40052CF4E /* AuthorizationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationParameters.swift; sourceTree = "<group>"; };
+		430C4E3A2BA5E5AB0052CF4E /* EnvironmentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentInfo.swift; sourceTree = "<group>"; };
+		437FC2572BA6D2F000284541 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		437FC2592BA6D85100284541 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
+		437FC25B2BA6EE7300284541 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
+		437FC25D2BA6EF8800284541 /* YandexLoginSDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginSDKError.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		430C4E122BA5D4770052CF4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		430C4E0C2BA5D4770052CF4E = {
+			isa = PBXGroup;
+			children = (
+				430C4E172BA5D4770052CF4E /* recall-yandex-sdk */,
+				430C4E162BA5D4770052CF4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		430C4E162BA5D4770052CF4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				430C4E152BA5D4770052CF4E /* recall-yandex-sdk.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		430C4E172BA5D4770052CF4E /* recall-yandex-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				430C4E352BA5D5A60052CF4E /* package */,
+				430C4E182BA5D4770052CF4E /* AppDelegate.swift */,
+				430C4E1A2BA5D4770052CF4E /* SceneDelegate.swift */,
+				430C4E1C2BA5D4770052CF4E /* ViewController.swift */,
+				430C4E1E2BA5D4770052CF4E /* Main.storyboard */,
+				430C4E212BA5D4790052CF4E /* Assets.xcassets */,
+				430C4E232BA5D4790052CF4E /* LaunchScreen.storyboard */,
+				430C4E262BA5D4790052CF4E /* Info.plist */,
+			);
+			path = "recall-yandex-sdk";
+			sourceTree = "<group>";
+		};
+		430C4E2C2BA5D48C0052CF4E /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				437FC25D2BA6EF8800284541 /* YandexLoginSDKError.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		430C4E2D2BA5D49D0052CF4E /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				430C4E322BA5D4CB0052CF4E /* Utilities */,
+				430C4E312BA5D4C30052CF4E /* Storage */,
+				430C4E302BA5D4BA0052CF4E /* Networking */,
+				430C4E2F2BA5D4B10052CF4E /* Errors */,
+				430C4E2E2BA5D4AA0052CF4E /* Core */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		430C4E2E2BA5D4AA0052CF4E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				430C4E332BA5D5040052CF4E /* ApplicationPrimacy.swift */,
+				430C4E382BA5E3E40052CF4E /* AuthorizationParameters.swift */,
+				430C4E3A2BA5E5AB0052CF4E /* EnvironmentInfo.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		430C4E2F2BA5D4B10052CF4E /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				437FC25B2BA6EE7300284541 /* StorageError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		430C4E302BA5D4BA0052CF4E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		430C4E312BA5D4C30052CF4E /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				437FC2572BA6D2F000284541 /* Storage.swift */,
+				437FC2592BA6D85100284541 /* SecureStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		430C4E322BA5D4CB0052CF4E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		430C4E352BA5D5A60052CF4E /* package */ = {
+			isa = PBXGroup;
+			children = (
+				430C4E2C2BA5D48C0052CF4E /* Public */,
+				430C4E2D2BA5D49D0052CF4E /* Private */,
+				430C4E362BA5D5CB0052CF4E /* YandexLoginSDK.swift */,
+			);
+			path = package;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		430C4E142BA5D4770052CF4E /* recall-yandex-sdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 430C4E292BA5D4790052CF4E /* Build configuration list for PBXNativeTarget "recall-yandex-sdk" */;
+			buildPhases = (
+				430C4E112BA5D4770052CF4E /* Sources */,
+				430C4E122BA5D4770052CF4E /* Frameworks */,
+				430C4E132BA5D4770052CF4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "recall-yandex-sdk";
+			productName = "recall-yandex-sdk";
+			productReference = 430C4E152BA5D4770052CF4E /* recall-yandex-sdk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		430C4E0D2BA5D4770052CF4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					430C4E142BA5D4770052CF4E = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 430C4E102BA5D4770052CF4E /* Build configuration list for PBXProject "recall-yandex-sdk" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 430C4E0C2BA5D4770052CF4E;
+			productRefGroup = 430C4E162BA5D4770052CF4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				430C4E142BA5D4770052CF4E /* recall-yandex-sdk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		430C4E132BA5D4770052CF4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				430C4E252BA5D4790052CF4E /* LaunchScreen.storyboard in Resources */,
+				430C4E222BA5D4790052CF4E /* Assets.xcassets in Resources */,
+				430C4E202BA5D4770052CF4E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		430C4E112BA5D4770052CF4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				437FC25E2BA6EF8800284541 /* YandexLoginSDKError.swift in Sources */,
+				437FC25C2BA6EE7300284541 /* StorageError.swift in Sources */,
+				437FC25A2BA6D85100284541 /* SecureStorage.swift in Sources */,
+				430C4E342BA5D5040052CF4E /* ApplicationPrimacy.swift in Sources */,
+				430C4E392BA5E3E40052CF4E /* AuthorizationParameters.swift in Sources */,
+				430C4E372BA5D5CB0052CF4E /* YandexLoginSDK.swift in Sources */,
+				430C4E1D2BA5D4770052CF4E /* ViewController.swift in Sources */,
+				430C4E192BA5D4770052CF4E /* AppDelegate.swift in Sources */,
+				437FC2582BA6D2F000284541 /* Storage.swift in Sources */,
+				430C4E1B2BA5D4770052CF4E /* SceneDelegate.swift in Sources */,
+				430C4E3B2BA5E5AB0052CF4E /* EnvironmentInfo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		430C4E1E2BA5D4770052CF4E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				430C4E1F2BA5D4770052CF4E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		430C4E232BA5D4790052CF4E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				430C4E242BA5D4790052CF4E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		430C4E272BA5D4790052CF4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		430C4E282BA5D4790052CF4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		430C4E2A2BA5D4790052CF4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "recall-yandex-sdk/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iad.best.recall-yandex-sdk";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		430C4E2B2BA5D4790052CF4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "recall-yandex-sdk/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iad.best.recall-yandex-sdk";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		430C4E102BA5D4770052CF4E /* Build configuration list for PBXProject "recall-yandex-sdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				430C4E272BA5D4790052CF4E /* Debug */,
+				430C4E282BA5D4790052CF4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		430C4E292BA5D4790052CF4E /* Build configuration list for PBXNativeTarget "recall-yandex-sdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				430C4E2A2BA5D4790052CF4E /* Debug */,
+				430C4E2B2BA5D4790052CF4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 430C4E0D2BA5D4770052CF4E /* Project object */;
+}
