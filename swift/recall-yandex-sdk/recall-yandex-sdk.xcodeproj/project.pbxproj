@@ -21,6 +21,10 @@
 		437FC25A2BA6D85100284541 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC2592BA6D85100284541 /* SecureStorage.swift */; };
 		437FC25C2BA6EE7300284541 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC25B2BA6EE7300284541 /* StorageError.swift */; };
 		437FC25E2BA6EF8800284541 /* YandexLoginSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC25D2BA6EF8800284541 /* YandexLoginSDKError.swift */; };
+		43F616562BA8484600FEBF94 /* StorageUtitlites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F616552BA8484600FEBF94 /* StorageUtitlites.swift */; };
+		43F616582BA84B4500FEBF94 /* DefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F616572BA84B4500FEBF94 /* DefaultStorage.swift */; };
+		43F6165A2BA8526F00FEBF94 /* SharedStorages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F616592BA8526F00FEBF94 /* SharedStorages.swift */; };
+		43F6165C2BA8538200FEBF94 /* CryptoUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6165B2BA8538200FEBF94 /* CryptoUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		437FC2592BA6D85100284541 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		437FC25B2BA6EE7300284541 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
 		437FC25D2BA6EF8800284541 /* YandexLoginSDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginSDKError.swift; sourceTree = "<group>"; };
+		43F616552BA8484600FEBF94 /* StorageUtitlites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUtitlites.swift; sourceTree = "<group>"; };
+		43F616572BA84B4500FEBF94 /* DefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStorage.swift; sourceTree = "<group>"; };
+		43F616592BA8526F00FEBF94 /* SharedStorages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStorages.swift; sourceTree = "<group>"; };
+		43F6165B2BA8538200FEBF94 /* CryptoUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +140,10 @@
 		430C4E312BA5D4C30052CF4E /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				43F616572BA84B4500FEBF94 /* DefaultStorage.swift */,
 				437FC2572BA6D2F000284541 /* Storage.swift */,
 				437FC2592BA6D85100284541 /* SecureStorage.swift */,
+				43F616592BA8526F00FEBF94 /* SharedStorages.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -141,6 +151,8 @@
 		430C4E322BA5D4CB0052CF4E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				43F616552BA8484600FEBF94 /* StorageUtitlites.swift */,
+				43F6165B2BA8538200FEBF94 /* CryptoUtilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -229,12 +241,16 @@
 				437FC25E2BA6EF8800284541 /* YandexLoginSDKError.swift in Sources */,
 				437FC25C2BA6EE7300284541 /* StorageError.swift in Sources */,
 				437FC25A2BA6D85100284541 /* SecureStorage.swift in Sources */,
+				43F6165C2BA8538200FEBF94 /* CryptoUtilities.swift in Sources */,
 				430C4E342BA5D5040052CF4E /* ApplicationPrimacy.swift in Sources */,
+				43F616582BA84B4500FEBF94 /* DefaultStorage.swift in Sources */,
 				430C4E392BA5E3E40052CF4E /* AuthorizationParameters.swift in Sources */,
+				43F6165A2BA8526F00FEBF94 /* SharedStorages.swift in Sources */,
 				430C4E372BA5D5CB0052CF4E /* YandexLoginSDK.swift in Sources */,
 				430C4E1D2BA5D4770052CF4E /* ViewController.swift in Sources */,
 				430C4E192BA5D4770052CF4E /* AppDelegate.swift in Sources */,
 				437FC2582BA6D2F000284541 /* Storage.swift in Sources */,
+				43F616562BA8484600FEBF94 /* StorageUtitlites.swift in Sources */,
 				430C4E1B2BA5D4770052CF4E /* SceneDelegate.swift in Sources */,
 				430C4E3B2BA5E5AB0052CF4E /* EnvironmentInfo.swift in Sources */,
 			);
