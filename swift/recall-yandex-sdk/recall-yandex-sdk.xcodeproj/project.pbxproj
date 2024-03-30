@@ -14,13 +14,28 @@
 		430C4E222BA5D4790052CF4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430C4E212BA5D4790052CF4E /* Assets.xcassets */; };
 		430C4E252BA5D4790052CF4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 430C4E232BA5D4790052CF4E /* LaunchScreen.storyboard */; };
 		430C4E342BA5D5040052CF4E /* ApplicationPrimacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E332BA5D5040052CF4E /* ApplicationPrimacy.swift */; };
-		430C4E372BA5D5CB0052CF4E /* YandexLoginSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E362BA5D5CB0052CF4E /* YandexLoginSDK.swift */; };
 		430C4E392BA5E3E40052CF4E /* AuthorizationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E382BA5E3E40052CF4E /* AuthorizationParameters.swift */; };
 		430C4E3B2BA5E5AB0052CF4E /* EnvironmentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C4E3A2BA5E5AB0052CF4E /* EnvironmentInfo.swift */; };
+		4351CE412BB58AC1007BDA2A /* HostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351CE402BB58AC1007BDA2A /* HostProvider.swift */; };
+		4351CE432BB58B64007BDA2A /* YandexLoginSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351CE422BB58B64007BDA2A /* YandexLoginSDK.swift */; };
+		4351CE452BB58F43007BDA2A /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4351CE442BB58F43007BDA2A /* NetworkingError.swift */; };
+		437689992BB82DC500B6DC9F /* JWTRequestComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437689982BB82DC500B6DC9F /* JWTRequestComponents.swift */; };
+		4376899B2BB82DED00B6DC9F /* RequestComponentsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4376899A2BB82DED00B6DC9F /* RequestComponentsProvider.swift */; };
+		4376899D2BB8530200B6DC9F /* TokenRequestComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4376899C2BB8530200B6DC9F /* TokenRequestComponents.swift */; };
+		4376899F2BB8589700B6DC9F /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4376899E2BB8589700B6DC9F /* ResponseParser.swift */; };
+		437689A12BB858CB00B6DC9F /* JWTResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437689A02BB858CB00B6DC9F /* JWTResponseParser.swift */; };
+		437689A32BB8596400B6DC9F /* ResponseParseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437689A22BB8596400B6DC9F /* ResponseParseFactory.swift */; };
+		437689A52BB859DF00B6DC9F /* TokenResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437689A42BB859DF00B6DC9F /* TokenResponseParser.swift */; };
 		437FC2582BA6D2F000284541 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC2572BA6D2F000284541 /* Storage.swift */; };
 		437FC25A2BA6D85100284541 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC2592BA6D85100284541 /* SecureStorage.swift */; };
 		437FC25C2BA6EE7300284541 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC25B2BA6EE7300284541 /* StorageError.swift */; };
 		437FC25E2BA6EF8800284541 /* YandexLoginSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC25D2BA6EF8800284541 /* YandexLoginSDKError.swift */; };
+		43E72F532BB5ADA60043662B /* URLUtilitiesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E72F522BB5ADA60043662B /* URLUtilitiesError.swift */; };
+		43E72F552BB5AE590043662B /* QueryUtilitiesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E72F542BB5AE590043662B /* QueryUtilitiesError.swift */; };
+		43E72F572BB5B3080043662B /* ActivationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E72F562BB5B3080043662B /* ActivationError.swift */; };
+		43E72F592BB5B3FB0043662B /* CoreLoginSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E72F582BB5B3FB0043662B /* CoreLoginSDKError.swift */; };
+		43E72F5B2BB5B4800043662B /* PKCEError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E72F5A2BB5B4800043662B /* PKCEError.swift */; };
+		43E72F5D2BB5C1940043662B /* PKCE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E72F5C2BB5C1940043662B /* PKCE.swift */; };
 		43F616562BA8484600FEBF94 /* StorageUtitlites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F616552BA8484600FEBF94 /* StorageUtitlites.swift */; };
 		43F616582BA84B4500FEBF94 /* DefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F616572BA84B4500FEBF94 /* DefaultStorage.swift */; };
 		43F6165A2BA8526F00FEBF94 /* SharedStorages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F616592BA8526F00FEBF94 /* SharedStorages.swift */; };
@@ -37,13 +52,28 @@
 		430C4E242BA5D4790052CF4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		430C4E262BA5D4790052CF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		430C4E332BA5D5040052CF4E /* ApplicationPrimacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationPrimacy.swift; sourceTree = "<group>"; };
-		430C4E362BA5D5CB0052CF4E /* YandexLoginSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginSDK.swift; sourceTree = "<group>"; };
 		430C4E382BA5E3E40052CF4E /* AuthorizationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationParameters.swift; sourceTree = "<group>"; };
 		430C4E3A2BA5E5AB0052CF4E /* EnvironmentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentInfo.swift; sourceTree = "<group>"; };
+		4351CE402BB58AC1007BDA2A /* HostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProvider.swift; sourceTree = "<group>"; };
+		4351CE422BB58B64007BDA2A /* YandexLoginSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginSDK.swift; sourceTree = "<group>"; };
+		4351CE442BB58F43007BDA2A /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		437689982BB82DC500B6DC9F /* JWTRequestComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTRequestComponents.swift; sourceTree = "<group>"; };
+		4376899A2BB82DED00B6DC9F /* RequestComponentsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestComponentsProvider.swift; sourceTree = "<group>"; };
+		4376899C2BB8530200B6DC9F /* TokenRequestComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequestComponents.swift; sourceTree = "<group>"; };
+		4376899E2BB8589700B6DC9F /* ResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
+		437689A02BB858CB00B6DC9F /* JWTResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTResponseParser.swift; sourceTree = "<group>"; };
+		437689A22BB8596400B6DC9F /* ResponseParseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParseFactory.swift; sourceTree = "<group>"; };
+		437689A42BB859DF00B6DC9F /* TokenResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponseParser.swift; sourceTree = "<group>"; };
 		437FC2572BA6D2F000284541 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		437FC2592BA6D85100284541 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		437FC25B2BA6EE7300284541 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
 		437FC25D2BA6EF8800284541 /* YandexLoginSDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginSDKError.swift; sourceTree = "<group>"; };
+		43E72F522BB5ADA60043662B /* URLUtilitiesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLUtilitiesError.swift; sourceTree = "<group>"; };
+		43E72F542BB5AE590043662B /* QueryUtilitiesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryUtilitiesError.swift; sourceTree = "<group>"; };
+		43E72F562BB5B3080043662B /* ActivationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationError.swift; sourceTree = "<group>"; };
+		43E72F582BB5B3FB0043662B /* CoreLoginSDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLoginSDKError.swift; sourceTree = "<group>"; };
+		43E72F5A2BB5B4800043662B /* PKCEError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCEError.swift; sourceTree = "<group>"; };
+		43E72F5C2BB5C1940043662B /* PKCE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCE.swift; sourceTree = "<group>"; };
 		43F616552BA8484600FEBF94 /* StorageUtitlites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUtitlites.swift; sourceTree = "<group>"; };
 		43F616572BA84B4500FEBF94 /* DefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStorage.swift; sourceTree = "<group>"; };
 		43F616592BA8526F00FEBF94 /* SharedStorages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStorages.swift; sourceTree = "<group>"; };
@@ -96,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				437FC25D2BA6EF8800284541 /* YandexLoginSDKError.swift */,
+				4351CE422BB58B64007BDA2A /* YandexLoginSDK.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -118,6 +149,7 @@
 				430C4E332BA5D5040052CF4E /* ApplicationPrimacy.swift */,
 				430C4E382BA5E3E40052CF4E /* AuthorizationParameters.swift */,
 				430C4E3A2BA5E5AB0052CF4E /* EnvironmentInfo.swift */,
+				43E72F5C2BB5C1940043662B /* PKCE.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -126,6 +158,12 @@
 			isa = PBXGroup;
 			children = (
 				437FC25B2BA6EE7300284541 /* StorageError.swift */,
+				4351CE442BB58F43007BDA2A /* NetworkingError.swift */,
+				43E72F522BB5ADA60043662B /* URLUtilitiesError.swift */,
+				43E72F542BB5AE590043662B /* QueryUtilitiesError.swift */,
+				43E72F562BB5B3080043662B /* ActivationError.swift */,
+				43E72F582BB5B3FB0043662B /* CoreLoginSDKError.swift */,
+				43E72F5A2BB5B4800043662B /* PKCEError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -133,6 +171,8 @@
 		430C4E302BA5D4BA0052CF4E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				437689972BB82D9D00B6DC9F /* ResponseParser */,
+				437689962BB82D7B00B6DC9F /* RequestComponents */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -153,6 +193,7 @@
 			children = (
 				43F616552BA8484600FEBF94 /* StorageUtitlites.swift */,
 				43F6165B2BA8538200FEBF94 /* CryptoUtilities.swift */,
+				4351CE402BB58AC1007BDA2A /* HostProvider.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -162,9 +203,29 @@
 			children = (
 				430C4E2C2BA5D48C0052CF4E /* Public */,
 				430C4E2D2BA5D49D0052CF4E /* Private */,
-				430C4E362BA5D5CB0052CF4E /* YandexLoginSDK.swift */,
 			);
 			path = package;
+			sourceTree = "<group>";
+		};
+		437689962BB82D7B00B6DC9F /* RequestComponents */ = {
+			isa = PBXGroup;
+			children = (
+				437689982BB82DC500B6DC9F /* JWTRequestComponents.swift */,
+				4376899A2BB82DED00B6DC9F /* RequestComponentsProvider.swift */,
+				4376899C2BB8530200B6DC9F /* TokenRequestComponents.swift */,
+			);
+			path = RequestComponents;
+			sourceTree = "<group>";
+		};
+		437689972BB82D9D00B6DC9F /* ResponseParser */ = {
+			isa = PBXGroup;
+			children = (
+				4376899E2BB8589700B6DC9F /* ResponseParser.swift */,
+				437689A02BB858CB00B6DC9F /* JWTResponseParser.swift */,
+				437689A22BB8596400B6DC9F /* ResponseParseFactory.swift */,
+				437689A42BB859DF00B6DC9F /* TokenResponseParser.swift */,
+			);
+			path = ResponseParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,20 +299,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E72F572BB5B3080043662B /* ActivationError.swift in Sources */,
+				437689992BB82DC500B6DC9F /* JWTRequestComponents.swift in Sources */,
 				437FC25E2BA6EF8800284541 /* YandexLoginSDKError.swift in Sources */,
+				437689A12BB858CB00B6DC9F /* JWTResponseParser.swift in Sources */,
 				437FC25C2BA6EE7300284541 /* StorageError.swift in Sources */,
+				43E72F592BB5B3FB0043662B /* CoreLoginSDKError.swift in Sources */,
+				4351CE432BB58B64007BDA2A /* YandexLoginSDK.swift in Sources */,
 				437FC25A2BA6D85100284541 /* SecureStorage.swift in Sources */,
+				437689A32BB8596400B6DC9F /* ResponseParseFactory.swift in Sources */,
 				43F6165C2BA8538200FEBF94 /* CryptoUtilities.swift in Sources */,
+				4376899F2BB8589700B6DC9F /* ResponseParser.swift in Sources */,
+				43E72F532BB5ADA60043662B /* URLUtilitiesError.swift in Sources */,
+				4351CE452BB58F43007BDA2A /* NetworkingError.swift in Sources */,
 				430C4E342BA5D5040052CF4E /* ApplicationPrimacy.swift in Sources */,
 				43F616582BA84B4500FEBF94 /* DefaultStorage.swift in Sources */,
+				4351CE412BB58AC1007BDA2A /* HostProvider.swift in Sources */,
 				430C4E392BA5E3E40052CF4E /* AuthorizationParameters.swift in Sources */,
 				43F6165A2BA8526F00FEBF94 /* SharedStorages.swift in Sources */,
-				430C4E372BA5D5CB0052CF4E /* YandexLoginSDK.swift in Sources */,
 				430C4E1D2BA5D4770052CF4E /* ViewController.swift in Sources */,
+				437689A52BB859DF00B6DC9F /* TokenResponseParser.swift in Sources */,
+				43E72F5B2BB5B4800043662B /* PKCEError.swift in Sources */,
+				4376899D2BB8530200B6DC9F /* TokenRequestComponents.swift in Sources */,
+				43E72F552BB5AE590043662B /* QueryUtilitiesError.swift in Sources */,
 				430C4E192BA5D4770052CF4E /* AppDelegate.swift in Sources */,
 				437FC2582BA6D2F000284541 /* Storage.swift in Sources */,
 				43F616562BA8484600FEBF94 /* StorageUtitlites.swift in Sources */,
+				43E72F5D2BB5C1940043662B /* PKCE.swift in Sources */,
 				430C4E1B2BA5D4770052CF4E /* SceneDelegate.swift in Sources */,
+				4376899B2BB82DED00B6DC9F /* RequestComponentsProvider.swift in Sources */,
 				430C4E3B2BA5E5AB0052CF4E /* EnvironmentInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
