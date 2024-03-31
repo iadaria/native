@@ -26,6 +26,9 @@
 		437689A12BB858CB00B6DC9F /* JWTResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437689A02BB858CB00B6DC9F /* JWTResponseParser.swift */; };
 		437689A32BB8596400B6DC9F /* ResponseParseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437689A22BB8596400B6DC9F /* ResponseParseFactory.swift */; };
 		437689A52BB859DF00B6DC9F /* TokenResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437689A42BB859DF00B6DC9F /* TokenResponseParser.swift */; };
+		437AA3672BB957E000296C2B /* URLSessionDataTaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437AA3662BB957E000296C2B /* URLSessionDataTaskDelegate.swift */; };
+		437AA3692BB9598200296C2B /* URLSessionDataTaskDelegateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437AA3682BB9598200296C2B /* URLSessionDataTaskDelegateStorage.swift */; };
+		437AA36B2BB97A8000296C2B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437AA36A2BB97A8000296C2B /* SessionManager.swift */; };
 		437FC2582BA6D2F000284541 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC2572BA6D2F000284541 /* Storage.swift */; };
 		437FC25A2BA6D85100284541 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC2592BA6D85100284541 /* SecureStorage.swift */; };
 		437FC25C2BA6EE7300284541 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FC25B2BA6EE7300284541 /* StorageError.swift */; };
@@ -64,6 +67,9 @@
 		437689A02BB858CB00B6DC9F /* JWTResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTResponseParser.swift; sourceTree = "<group>"; };
 		437689A22BB8596400B6DC9F /* ResponseParseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParseFactory.swift; sourceTree = "<group>"; };
 		437689A42BB859DF00B6DC9F /* TokenResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponseParser.swift; sourceTree = "<group>"; };
+		437AA3662BB957E000296C2B /* URLSessionDataTaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskDelegate.swift; sourceTree = "<group>"; };
+		437AA3682BB9598200296C2B /* URLSessionDataTaskDelegateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskDelegateStorage.swift; sourceTree = "<group>"; };
+		437AA36A2BB97A8000296C2B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		437FC2572BA6D2F000284541 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		437FC2592BA6D85100284541 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		437FC25B2BA6EE7300284541 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
@@ -173,6 +179,9 @@
 			children = (
 				437689972BB82D9D00B6DC9F /* ResponseParser */,
 				437689962BB82D7B00B6DC9F /* RequestComponents */,
+				437AA3662BB957E000296C2B /* URLSessionDataTaskDelegate.swift */,
+				437AA3682BB9598200296C2B /* URLSessionDataTaskDelegateStorage.swift */,
+				437AA36A2BB97A8000296C2B /* SessionManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -321,6 +330,8 @@
 				437689A52BB859DF00B6DC9F /* TokenResponseParser.swift in Sources */,
 				43E72F5B2BB5B4800043662B /* PKCEError.swift in Sources */,
 				4376899D2BB8530200B6DC9F /* TokenRequestComponents.swift in Sources */,
+				437AA3692BB9598200296C2B /* URLSessionDataTaskDelegateStorage.swift in Sources */,
+				437AA3672BB957E000296C2B /* URLSessionDataTaskDelegate.swift in Sources */,
 				43E72F552BB5AE590043662B /* QueryUtilitiesError.swift in Sources */,
 				430C4E192BA5D4770052CF4E /* AppDelegate.swift in Sources */,
 				437FC2582BA6D2F000284541 /* Storage.swift in Sources */,
@@ -329,6 +340,7 @@
 				430C4E1B2BA5D4770052CF4E /* SceneDelegate.swift in Sources */,
 				4376899B2BB82DED00B6DC9F /* RequestComponentsProvider.swift in Sources */,
 				430C4E3B2BA5E5AB0052CF4E /* EnvironmentInfo.swift in Sources */,
+				437AA36B2BB97A8000296C2B /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

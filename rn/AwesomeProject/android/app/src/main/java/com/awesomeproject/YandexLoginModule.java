@@ -4,6 +4,7 @@ import static android.provider.Settings.System.getString;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Build;
 import android.util.Log;
 
@@ -73,17 +74,16 @@ public class YandexLoginModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void getClientId(final Promise promise) {
     try {
-      //Integer cliendId = BuildConfig.CLIEND_ID;
-      int s = R.string.client_id;
-      String clientId = String.valueOf(R.string.client_id);
-      Log.i(TAG, clientId);
-      promise.resolve(clientId);
+      Resources res = getReactApplicationContext().getResources();
+      String s = res.getString(R.string.clientId);
+      Log.i(TAG, s);
+      promise.resolve(s);
     } catch(Exception e) {
       promise.reject("Error to get buildConfig. Did you fill in cliendId?", e);
     }
   }
   @ReactMethod
-  public void login(final String email, final Promise promise) {
+  public void login(final Promise promise) {
     Activity currentActivity = getCurrentActivity();
 
     if (currentActivity == null) {
