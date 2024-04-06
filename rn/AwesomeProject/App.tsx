@@ -75,8 +75,7 @@ function App(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-        <NewModuleButton />
-        <ImagePicker />
+          
         <YandexLoginButton />
         </View>
       </ScrollView>

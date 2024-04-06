@@ -8,6 +8,13 @@ interface CalendarModule {
     location: string,
     callback?: (error: string, eventId: number) => void,
   ): void;
+  createCalendarEvent(
+    name: string,
+    location: string,
+    
+    errorCallback?: (eventId: number) => void,
+    successCallback?: (error: string) => void,
+  ): void;
   createCalendarEvent(name: string, location: string): Promise<number>;
   getConstants(): Constants;
   sendEventFromJS(): void;
