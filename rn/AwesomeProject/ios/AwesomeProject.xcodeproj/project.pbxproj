@@ -15,6 +15,7 @@
 		4383D5E12BC111D3007AF8F3 /* YandexLoginModuleBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4383D5E02BC111D3007AF8F3 /* YandexLoginModuleBridge.m */; };
 		43AE0EE02BBD4D7F00CB9957 /* RCTCalendarModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE0EDF2BBD4D7F00CB9957 /* RCTCalendarModule.m */; };
 		43AE0EE32BBD9CD900CB9957 /* YandexLoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AE0EE22BBD9CD900CB9957 /* YandexLoginModule.swift */; };
+		43AEB7762BC1A39C00C4D925 /* YandexLoginOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEB7752BC1A39C00C4D925 /* YandexLoginOrigin.swift */; };
 		7699B88040F8A987B510C191 /* libPods-AwesomeProject-AwesomeProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AwesomeProject-AwesomeProjectTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		43AE0EDF2BBD4D7F00CB9957 /* RCTCalendarModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTCalendarModule.m; sourceTree = "<group>"; };
 		43AE0EE12BBD9CD900CB9957 /* AwesomeProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AwesomeProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		43AE0EE22BBD9CD900CB9957 /* YandexLoginModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginModule.swift; sourceTree = "<group>"; };
+		43AEB7752BC1A39C00C4D925 /* YandexLoginOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginOrigin.swift; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-AwesomeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject.release.xcconfig"; path = "Target Support Files/Pods-AwesomeProject/Pods-AwesomeProject.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-AwesomeProject-AwesomeProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject-AwesomeProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeProject-AwesomeProjectTests/Pods-AwesomeProject-AwesomeProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-AwesomeProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 				43AE0EE22BBD9CD900CB9957 /* YandexLoginModule.swift */,
 				43AE0EE12BBD9CD900CB9957 /* AwesomeProject-Bridging-Header.h */,
 				4383D5E02BC111D3007AF8F3 /* YandexLoginModuleBridge.m */,
+				43AEB7752BC1A39C00C4D925 /* YandexLoginOrigin.swift */,
 			);
 			name = AwesomeProject;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 			files = (
 				4383D5E12BC111D3007AF8F3 /* YandexLoginModuleBridge.m in Sources */,
 				43AE0EE02BBD4D7F00CB9957 /* RCTCalendarModule.m in Sources */,
+				43AEB7762BC1A39C00C4D925 /* YandexLoginOrigin.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				43AE0EE32BBD9CD900CB9957 /* YandexLoginModule.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,

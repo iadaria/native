@@ -47,5 +47,21 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+<array>
+   <string>primaryyandexloginsdk</string>
+   <string>secondaryyandexloginsdk</string>
+</array>
+<key>CFBundleURLTypes</key>
+<array>
+   <dict>
+      <key>CFBundleURLName</key>
+      <string>YandexLoginSDK</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+         <string>yx27ab41f609974340b723f9d82d07134e</string>
+      </array>
+   </dict>
+</array>
 </dict>
 </plist>
